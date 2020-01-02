@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgbase"
+    tools:context=".LaporHilangActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:padding="20sp"
+        android:text="Lapor Barang Hilang"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/profile_card"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <EditText
+            android:id="@+id/txtTitle"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:inputType="text"
+            android:padding="20sp"
+            android:hint="Title" />
+
+        <EditText
+            android:id="@+id/txtLocation"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:inputType="text"
+            android:padding="20sp"
+            android:hint="Location" />
+
+        <EditText
+            android:id="@+id/txtCaption"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:inputType="text"
+            android:padding="20sp"
+            android:gravity="start"
+            android:hint="Write caption..."/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_attachment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:padding="20sp"
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/iv_add_attachment"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/add" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:text="Lampiran"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_attachment"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_width="200dp"
+            android:layout_height="200dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnWa"
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/profile_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:src="@drawable/wa"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            />
+
+        <EditText
+            android:id="@+id/txtPhone"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:textSize="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="55dp"
+        android:background="@drawable/edit_button_corner"
+        android:padding="13dp"
+        android:text="Send"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lnWa" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="213dp"
+            android:layout_height="59dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/profile_card"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSend"
+            app:layout_constraintVertical_bias="0.712">
+
+            <Button
+                android:id="@+id/btnDash"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="17dp"
+                android:background="@drawable/amikom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.482" />
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="17dp"
+                android:background="@drawable/search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnDash"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnNotif"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="17dp"
+                android:background="@drawable/notif"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnSearch"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnProfile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="17dp"
+                android:background="@drawable/maie"
+                android:elevation="10dp"
+                android:stateListAnimator="@null"
+                android:translationZ="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnNotif"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

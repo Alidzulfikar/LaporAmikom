@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "290296684769",
+    "firebase_url": "https://laporamikom.firebaseio.com",
+    "project_id": "laporamikom",
+    "storage_bucket": "laporamikom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290296684769:android:412dc94d02a77e0d06d7a0",
+        "android_client_info": {
+          "package_name": "com.example.laporamikom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290296684769-or1oapcq0g8hv3p8kurlir7oibqnus53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.laporamikom",
+            "certificate_hash": "2115357162f67af15324d1c4115538e4aae5d739"
+          }
+        },
+        {
+          "client_id": "290296684769-d0sspfnrs7mk9beq759f6d2n0464mlvv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCE1ZIflkijeB2wSZ2dWCSg2jk1tx8Wao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290296684769-d0sspfnrs7mk9beq759f6d2n0464mlvv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
