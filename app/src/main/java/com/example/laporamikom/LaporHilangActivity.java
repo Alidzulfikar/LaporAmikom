@@ -28,8 +28,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -46,7 +48,6 @@ public class LaporHilangActivity extends AppCompatActivity {
     ImageView ivAttachment;
     private static final int PIC_ID = 1;
     Button dashboard, profile, btnSend;
-    int ph = 0;
 
     EditText title, loc, cap, phone;
     Data data;
@@ -133,35 +134,38 @@ public class LaporHilangActivity extends AppCompatActivity {
     }
 
     private void FileUploader() {
-        String imageId;
-        ph = Integer.parseInt(phone.getText().toString());
+        final String imageId;
         imageId = System.currentTimeMillis()+"."+getExtension(imgUri);
 
         data.setTitle(title.getText().toString().trim());
         data.setLoc(loc.getText().toString().trim());
         data.setCap(cap.getText().toString().trim());
-        data.setPhone(ph);
-        data.setImageId(imageId);
-        reff.push().setValue(data);
+        data.setPhone(phone.getText().toString());
 
 
         StorageReference Ref = mStorageRef.child(imageId );
         Ref.putFile(imgUri)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        // Get a URL to the uploaded content
-                        //Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                        Toast.makeText(LaporHilangActivity.this, "Data Added", Toast.LENGTH_LONG).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle unsuccessful uploads
-                        // ...
-                    }
-                });
+               .addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                   @Override
+                   public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                     if(!task.isSuccessful())  {
+                         // TODO tampilkan error
+                         return;
+                     }
+
+                     // get image Url
+                       task.getResult().getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                           @Override
+                           public void onSuccess(Uri uri) {
+                            String imageUrl = uri.toString();
+                            data.setImageId(imageUrl);
+                               reff.push().setValue(data);
+
+
+                           }
+                       });
+                   }
+               });
 
     }
 }

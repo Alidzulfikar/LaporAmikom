@@ -1,11 +1,15 @@
 package com.example.laporamikom;
 
-public class Data {
+import android.net.Uri;
+
+import java.io.Serializable;
+
+public class Data implements Serializable {
 
     private String title;
     private String loc;
     private String cap;
-    private Integer phone;
+    private String phone;
     private String imageId;
 
     public Data(){
@@ -37,11 +41,11 @@ public class Data {
         this.cap = cap;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
