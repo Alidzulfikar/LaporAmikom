@@ -18,6 +18,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,7 +42,7 @@ public class Kehilangan extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         adapterLaporan = new AdapterLaporan(getActivity());
-        databaseReference = FirebaseDatabase.getInstance().getReference("Lapor");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Lapor").child("Hilang");
         rvLaporan = view.findViewById(R.id.rvHilang);
         rvLaporan.setLayoutManager(new LinearLayoutManager(getActivity()));
         rvLaporan.setAdapter(adapterLaporan);

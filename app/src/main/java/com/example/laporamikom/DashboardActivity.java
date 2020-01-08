@@ -20,8 +20,6 @@ public class DashboardActivity extends AppCompatActivity implements TabLayout.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         tabLayout = findViewById(R.id.tabLayout);
 

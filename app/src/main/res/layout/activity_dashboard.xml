@@ -6,23 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorPrimary"
-        android:elevation="3dp"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
+        app:tabTextColor="@android:color/black"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabIndicatorColor="@color/amikomOrange"
         android:layout_height="wrap_content"
         android:id="@+id/tabLayout"
-        android:layout_below="@id/toolbar"
-        android:background="@color/colorPrimary"
+        android:layout_margin="5dp"
+        android:background="@drawable/bgbase"
         android:elevation="6dp"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>

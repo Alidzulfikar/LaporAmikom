@@ -39,6 +39,7 @@
                 android:layout_width="300dp"
                 android:layout_height="80dp"
                 android:inputType="text"
+                android:id="@+id/txtTitle"
                 android:padding="20sp"
                 android:hint="Title" />
 
@@ -47,6 +48,7 @@
                 android:layout_height="80dp"
                 android:inputType="text"
                 android:padding="20sp"
+                android:id="@+id/txtLocation"
                 android:hint="Location" />
 
             <EditText
@@ -54,6 +56,7 @@
                 android:layout_height="200dp"
                 android:inputType="text"
                 android:padding="20sp"
+                android:id="@+id/txtCaption"
                 android:gravity="start"
                 android:hint="Write caption..."/>
 
@@ -123,7 +126,8 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:text="+62"
+                android:inputType="number"
+                android:id="@+id/txtPhone"
                 android:textSize="20dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="8dp"

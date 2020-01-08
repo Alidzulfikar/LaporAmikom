@@ -87,8 +87,8 @@ public class LaporHilangActivity extends AppCompatActivity {
         ivAddAttachment = findViewById(R.id.iv_add_attachment);
         ivAttachment = findViewById(R.id.iv_attachment);
         data = new Data();
-        reff = FirebaseDatabase.getInstance().getReference().child("Lapor");
-        mStorageRef = FirebaseStorage.getInstance().getReference("Images");
+        reff = FirebaseDatabase.getInstance().getReference().child("Lapor").child("Hilang");
+        mStorageRef = FirebaseStorage.getInstance().getReference("Images").child("Hilang");
 
         ivAddAttachment.setOnClickListener(new View.OnClickListener() {
             @Override
